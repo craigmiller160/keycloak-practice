@@ -23,18 +23,21 @@ setInterval(() => {
  */
 
 export const Login = () => {
-    // useEffect(() => {
-    //     keycloak.init({ onLoad: initOptions.onLoad })
-    // }, []);
-    const login = () => {
-        // console.log('Clicked', keycloak.login);
-        // keycloak.login();
-        keycloak.init({ onLoad: initOptions.onLoad });
-    }
+    useEffect(() => {
+        keycloak.init({ onLoad: initOptions.onLoad })
+            .then((res) => {
+                console.log('RESULT', res, keycloak.token);
+            })
+    }, []);
+    // const login = () => {
+    //     console.log('Clicked', keycloak.login);
+    //     keycloak.login();
+        // keycloak.init({ onLoad: initOptions.onLoad });
+    // }
 
     return (
         <div>
-            <button onClick={login}>Login</button>
+            {/*<button onClick={login}>Login</button>*/}
         </div>
     )
 }
