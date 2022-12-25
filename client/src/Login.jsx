@@ -22,11 +22,19 @@ setInterval(() => {
   }, 6000)
  */
 
+const decodeToken = (token) => {
+    const core = token.split('.')[1];
+    console.log(atob(core));
+}
+
 export const Login = () => {
     useEffect(() => {
         keycloak.init({ onLoad: initOptions.onLoad })
             .then((res) => {
                 console.log('RESULT', res, keycloak.token);
+                if (res) {
+                    decodeToken(keycloak.token);
+                }
             })
     }, []);
     // const login = () => {
