@@ -16,5 +16,13 @@ services:
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
+      - DB_VENDOR=postgres
+      - DB_ADDR=kc_postgres
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_DATABASE=postgres
+      - DB_SCHEMA=public
     command:
       - start-dev
+    depends_on:
+      - postgres
