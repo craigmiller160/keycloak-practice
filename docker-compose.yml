@@ -16,12 +16,10 @@ services:
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
-      - DB_VENDOR=postgres
-      - DB_ADDR=kc_postgres
-      - DB_USER=postgres
-      - DB_PASSWORD=password
-      - DB_DATABASE=postgres
-      - DB_SCHEMA=public
+      - KC_DB=postgres
+      - KC_DB_PASSWORD=password
+      - KC_DB_USERNAME=postgres
+      - KC_DB_URL=jdbc:postgresql://kc_postgres:5432/postgres
     command:
       - start-dev
     depends_on:
