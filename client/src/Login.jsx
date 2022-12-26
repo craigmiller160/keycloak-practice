@@ -24,7 +24,7 @@ setInterval(() => {
 
 const decodeToken = (token) => {
     const core = token.split('.')[1];
-    console.log(atob(core));
+    console.log(JSON.stringify(JSON.parse(atob(core)), null, 2));
 }
 
 export const Login = () => {
