@@ -11,6 +11,7 @@ resource "keycloak_openid_client" "openid_client" {
   enabled             = true
 
   access_type         = "CONFIDENTIAL"
+  client_secret = "ABCDEFGHIJLKMNOP"
   standard_flow_enabled = true
   valid_redirect_uris = [
     "http://localhost:3003/*"
