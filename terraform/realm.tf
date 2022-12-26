@@ -1,6 +1,13 @@
 resource "keycloak_realm" "realm" {
   realm   = "my-realm"
   enabled = true
+
+#  smtp_server {
+#    host = ""
+#    port = 0
+#    from = ""
+#    # ...
+#  }
 }
 
 resource "keycloak_openid_client" "openid_client" {
