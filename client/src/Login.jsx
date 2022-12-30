@@ -2,7 +2,7 @@ import Keycloak from "keycloak-js";
 import {useEffect} from "react";
 
 const initOptions = {
-    url: 'http://127.0.0.1:8080/', realm: 'practice', clientId: 'practice-app', onLoad: 'login-required'
+    url: 'http://127.0.0.1:8080/', realm: 'my-realm', clientId: 'test-client', onLoad: 'login-required'
 }
 
 const keycloak = Keycloak(initOptions);
