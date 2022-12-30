@@ -29,6 +29,7 @@ const decodeToken = (token) => {
 
 export const Login = () => {
     useEffect(() => {
+        console.log('TOKEN', keycloak.token);
         keycloak.init({ onLoad: initOptions.onLoad })
             .then((res) => {
                 if (res) {
