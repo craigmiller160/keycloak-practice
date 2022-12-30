@@ -31,21 +31,18 @@ export const Login = () => {
     useEffect(() => {
         keycloak.init({ onLoad: initOptions.onLoad })
             .then((res) => {
-                console.log('RESULT', res, keycloak.token);
                 if (res) {
                     decodeToken(keycloak.token);
                 }
             })
     }, []);
-    // const login = () => {
-    //     console.log('Clicked', keycloak.login);
-    //     keycloak.login();
-        // keycloak.init({ onLoad: initOptions.onLoad });
-    // }
+    const login = () => {
+        keycloak.login();
+    }
 
     return (
         <div>
-            {/*<button onClick={login}>Login</button>*/}
+            <button onClick={login}>Login</button>
         </div>
     )
 }
