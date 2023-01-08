@@ -1,0 +1,6 @@
+KeycloakDeployment is a class with the config, I think. It comes from the KeycloakConfigResolver and the KeycloakSpringConfigResolverWrapper.
+
+TODO
+
+1. Have secure & insecure paths and make both work with KeyCloak.
+2. Figure out how to do secure calls using only the cookie
