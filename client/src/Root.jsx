@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import Keycloak from "keycloak-js";
 import {UserInfo} from "./UserInfo";
+import {Api} from "./Api";
 
 const initOptions = {
     url: 'http://127.0.0.1:8080/', realm: 'my-realm', clientId: 'test-client', onLoad: 'login-required'
@@ -57,6 +58,7 @@ export const Root = () => {
         <div>
             <h1>KeyCloak Practice</h1>
             <UserInfo token={state.token} />
+            <Api token={state.token} />
         </div>
     )
 };
