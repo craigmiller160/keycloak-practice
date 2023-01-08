@@ -29,6 +29,25 @@ export const Root = () => {
                 console.error(ex);
                 alert('Error with login');
             });
+
+        setInterval(() => {
+            console.log('UPDATING TOKEN');
+            keycloak.updateToken(70)
+                .then((res) => {
+                    if (res) {
+                        setState({
+                            token: keycloak.token,
+                            isDone: true
+                        });
+                    } else {
+                        alert('Refresh failed')
+                    }
+                })
+                .catch((ex) => {
+                    console.error(ex);
+                    alert('Error with refresh');
+                })
+        }, 60_000)
     }, []);
 
     if (!state.isDone) {
