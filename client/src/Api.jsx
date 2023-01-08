@@ -1,7 +1,7 @@
 
 const callApi = (token) => fetch('http://localhost:8081/hello', {
     headers: {
-        Authorization: `Bearer ${token}`
+        // Authorization: `Bearer ${token}`
     }
 })
     .then((res) => res.text())

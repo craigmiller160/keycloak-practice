@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/hello")
 class HelloController {
     @GetMapping
-    fun sayHello(@RequestHeader(value = "Authorization", required = false) authHeader: String): String {
+    fun sayHello(@RequestHeader(value = "Authorization", required = false) authHeader: String?): String {
         println("AUTH HEADER: $authHeader")
         return "Hello World"
     }
