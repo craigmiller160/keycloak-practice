@@ -1,2 +1,10 @@
 server:
   port: 8081
+
+keycloak:
+  realm: my-realm
+  auth-server-url: http://localhost:8080
+  ssl-required: external
+  resource: client-creds-receiver
+  bearer-only: true
+  use-resource-role-mappings: true
