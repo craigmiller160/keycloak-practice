@@ -14,6 +14,7 @@ export const UserInfo = ({ tokenContainer }) => {
             <h3>User Info</h3>
             <p>ID: {claims.sub}</p>
             <p>Name: {claims.name}</p>
+            <p>Exp: {new Date(claims.exp * 1000).toISOString()}</p>
         </div>
     );
 }
