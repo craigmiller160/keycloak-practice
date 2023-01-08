@@ -8,11 +8,12 @@ keycloak:
   resource: client-creds-receiver
   bearer-only: true
   use-resource-role-mappings: true
-  security-constraints:
-    - security-collections:
-        - patterns:
-            - /**
-      auth-roles:
-        - access
-  cors: false
-  cors-allowed-methods: GET, POST, PUT, DELETE
+  public-client: true
+#  security-constraints:
+#    - security-collections:
+#        - patterns:
+#            - /**
+#      auth-roles:
+#        - access
+#  cors: false
+#  cors-allowed-methods: GET, POST, PUT, DELETE
