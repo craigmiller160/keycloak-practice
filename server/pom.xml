@@ -135,7 +135,6 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-                <executions>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
