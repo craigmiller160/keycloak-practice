@@ -4,3 +4,4 @@ TODO
 
 1. Have secure & insecure paths and make both work with KeyCloak.
 2. Figure out how to do secure calls using only the cookie
+3. Figure out how to access the User ID from the token/security context
