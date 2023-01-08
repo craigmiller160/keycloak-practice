@@ -6,11 +6,11 @@ import {UserInfo} from "./UserInfo";
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 
-keycloakInit((token) => {
+keycloakInit((tokenContainer) => {
     root.render(
         <div>
             <h1>KeyCloak Test</h1>
-            <UserInfo token={token} />
+            <UserInfo tokenContainer={tokenContainer} />
         </div>
     );
 });
