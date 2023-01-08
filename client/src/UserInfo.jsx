@@ -1,14 +1,14 @@
 
-const tokenToClaims = (tokenContainer) => {
-    if (tokenContainer) {
-        const core = tokenContainer.token.split('.')[1];
+const tokenToClaims = (token) => {
+    if (token) {
+        const core = token.split('.')[1];
         return JSON.parse(atob(core));
     }
     return {};
 }
 
-export const UserInfo = ({ tokenContainer }) => {
-    const claims = tokenToClaims(tokenContainer);
+export const UserInfo = ({ token }) => {
+    const claims = tokenToClaims(token);
     return (
         <div>
             <h3>User Info</h3>
