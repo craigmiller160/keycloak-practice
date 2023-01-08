@@ -1,7 +1,7 @@
 
 const callApi = (token) => fetch('http://localhost:8081/hello', {
     headers: {
-        // Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`
     }
 })
     .then((res) => res.text())
@@ -10,6 +10,7 @@ const callApi = (token) => fetch('http://localhost:8081/hello', {
 export const Api = ({ token }) => (
     <div>
         <h3>API</h3>
-        <button onClick={() => callApi(token)}>Call</button>
+        <button onClick={() => callApi(token)}>Call With Token</button>
+        <button onClick={() => callApi()}>Call Without Token</button>
     </div>
 )

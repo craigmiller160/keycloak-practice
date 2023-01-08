@@ -8,3 +8,9 @@ keycloak:
   resource: client-creds-receiver
   bearer-only: true
   use-resource-role-mappings: true
+  security-constraints:
+    - security-collections:
+        - patterns:
+            - /**
+      auth-roles:
+        - access
