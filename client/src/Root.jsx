@@ -45,6 +45,7 @@ export const Root = () => {
                     }
                 })
                 .catch((ex) => {
+                    // TODO error occurs if the user is not logged in
                     console.error(ex);
                     alert('Error with refresh');
                 })
