@@ -24,9 +24,10 @@ class SecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
         RegisterSessionAuthenticationStrategy(SessionRegistryImpl())
 
     override fun configure(http: HttpSecurity) {
+        super.configure(http)
         http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/**").hasRole("access")
+            .antMatchers("/**").authenticated()
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
