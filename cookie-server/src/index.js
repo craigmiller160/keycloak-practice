@@ -7,7 +7,7 @@ const createCookie = () => {
     return ['my-cookie', value];
 }
 
-app.get('/', (req, res) => {
+app.get('/create', (req, res) => {
     const [name, value] = createCookie();
     res.cookie(name, value);
     res.status(204);
