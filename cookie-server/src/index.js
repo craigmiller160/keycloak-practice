@@ -6,7 +6,8 @@ app.use(cookieParser());
 
 const createCookie = () => {
     return ['my-cookie', 'HelloWorld', {
-        maxAge: '1000000'
+        maxAge: '1000000',
+        path: '/cookies/endpoint1'
     }];
 }
 
