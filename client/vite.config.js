@@ -13,7 +13,7 @@ export default {
                 rewrite: (thePath) => thePath.replace(/^\/api/, '')
             },
             '/cookies': {
-                target: 'http://locahost:3001',
+                target: 'http://localhost:3001',
                 changeOrigin: true,
                 secure: false,
                 rewrite: (thePath) => thePath.replace(/^\/cookies/, '')
