@@ -32,7 +32,7 @@ class SecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeRequests()
-            .antMatchers("/**").fullyAuthenticated()
+            .antMatchers("/**").hasAnyRole("access")
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
