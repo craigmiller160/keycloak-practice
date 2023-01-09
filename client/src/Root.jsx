@@ -31,25 +31,25 @@ export const Root = () => {
                 alert('Error with login');
             });
 
-        setInterval(() => {
-            console.log('UPDATING TOKEN');
-            keycloak.updateToken(70)
-                .then((res) => {
-                    if (res) {
-                        setState({
-                            token: keycloak.token,
-                            isDone: true
-                        });
-                    } else {
-                        alert('Refresh failed')
-                    }
-                })
-                .catch((ex) => {
-                    // TODO error occurs if the user is not logged in
-                    console.error(ex);
-                    alert('Error with refresh');
-                })
-        }, 60_000)
+        // setInterval(() => {
+        //     console.log('UPDATING TOKEN');
+            // keycloak.updateToken(70)
+            //     .then((res) => {
+            //         if (res) {
+            //             setState({
+            //                 token: keycloak.token,
+            //                 isDone: true
+            //             });
+            //         } else {
+            //             alert('Refresh failed')
+            //         }
+            //     })
+            //     .catch((ex) => {
+            //         // TODO error occurs if the user is not logged in
+            //         console.error(ex);
+            //         alert('Error with refresh');
+            //     })
+        // }, 60_000)
     }, []);
 
     if (!state.isDone) {
