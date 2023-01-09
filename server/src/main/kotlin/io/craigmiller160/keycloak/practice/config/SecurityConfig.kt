@@ -15,23 +15,23 @@ import org.springframework.security.core.session.SessionRegistryImpl
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy
 
-//@Configuration
-//@KeycloakConfiguration
-//@EnableWebSecurity
-//class SecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
-//    @Bean
-//    override fun sessionAuthenticationStrategy(): SessionAuthenticationStrategy =
-//        RegisterSessionAuthenticationStrategy(SessionRegistryImpl())
-//
-////    override fun configure(http: HttpSecurity) {
-////        http.csrf().disable()
-////            .authorizeRequests()
-////            .antMatchers("/**").hasRole("access")
-////    }
-//
-//    override fun configure(auth: AuthenticationManagerBuilder) {
-//        val provider = keycloakAuthenticationProvider()
-//        provider.setGrantedAuthoritiesMapper(SimpleAuthorityMapper())
-//        auth.authenticationProvider(provider)
-//    }
-//}
+@Configuration
+@KeycloakConfiguration
+@EnableWebSecurity
+class SecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
+    @Bean
+    override fun sessionAuthenticationStrategy(): SessionAuthenticationStrategy =
+        RegisterSessionAuthenticationStrategy(SessionRegistryImpl())
+
+    override fun configure(http: HttpSecurity) {
+        http.csrf().disable()
+            .authorizeRequests()
+            .antMatchers("/**").hasRole("access")
+    }
+
+    override fun configure(auth: AuthenticationManagerBuilder) {
+        val provider = keycloakAuthenticationProvider()
+        provider.setGrantedAuthoritiesMapper(SimpleAuthorityMapper())
+        auth.authenticationProvider(provider)
+    }
+}
