@@ -1,6 +1,11 @@
 server:
   port: 8081
 
+logging:
+  level:
+    org.keycloak: debug
+
+
 keycloak:
   realm: my-realm
   auth-server-url: http://localhost:8080
@@ -9,11 +14,13 @@ keycloak:
   bearer-only: true
   use-resource-role-mappings: true
   public-client: true
-#  security-constraints:
-#    - security-collections:
-#        - patterns:
-#            - /**
-#      auth-roles:
-#        - access
+  credentials:
+    secret: NUB8swqqvvJC9fabCGRpCTRmMJNpVOmI
+  security-constraints:
+    - security-collections:
+        - patterns:
+            - /**
+      auth-roles:
+        - access
 #  cors: false
 #  cors-allowed-methods: GET, POST, PUT, DELETE

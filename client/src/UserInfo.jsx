@@ -15,6 +15,7 @@ export const UserInfo = ({ token }) => {
             <p>ID: {claims.sub}</p>
             <p>Name: {claims.name}</p>
             <p>Exp: {new Date(claims.exp * 1000).toISOString()}</p>
+            <p>Token: {token}</p>
         </div>
     );
 }
