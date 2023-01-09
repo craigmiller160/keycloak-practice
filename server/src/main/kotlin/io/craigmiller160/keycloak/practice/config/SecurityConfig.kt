@@ -27,7 +27,7 @@ class SecurityConfig : KeycloakWebSecurityConfigurerAdapter() {
         super.configure(http)
         http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/**").authenticated()
+            .antMatchers("/**").fullyAuthenticated()
     }
 
     override fun configure(auth: AuthenticationManagerBuilder) {
