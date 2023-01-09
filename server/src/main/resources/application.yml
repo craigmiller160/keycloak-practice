@@ -3,7 +3,7 @@ server:
 
 logging:
   level:
-    org.keycloak: debug
+    org.keycloak: trace
 
 
 keycloak:
@@ -16,11 +16,14 @@ keycloak:
   public-client: true
   credentials:
     secret: NUB8swqqvvJC9fabCGRpCTRmMJNpVOmI
-  security-constraints:
-    - security-collections:
-        - patterns:
-            - /**
-      auth-roles:
-        - access
+#  security-constraints:
+#    - auth-roles:
+#        - access
+#    - security-collections:
+#        - name: my-collection
+#          patterns:
+#            - /**
+#      auth-roles:
+#        - access
 #  cors: false
 #  cors-allowed-methods: GET, POST, PUT, DELETE
