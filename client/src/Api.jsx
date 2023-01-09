@@ -1,5 +1,5 @@
 
-const callApi = (token) => fetch('http://localhost:8081/hello', {
+const callApi = (token) => fetch('/api/hello', {
     headers: {
         Authorization: `Bearer ${token}`
     }

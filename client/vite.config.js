@@ -4,7 +4,15 @@ const path = require('path');
 export default {
     root: path.join(process.cwd(), 'src'),
     server: {
-        port: 3003
+        port: 3003,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8081',
+                changeOrigin: true,
+                secure: false,
+                rewrite: (thePath) => thePath.replace(/^\/api/, '')
+            }
+        }
     },
     plugins: [
         react()
