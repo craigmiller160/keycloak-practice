@@ -4,8 +4,11 @@ import {UserInfo} from "./UserInfo";
 import {Api} from "./Api";
 import {Cookies} from "./Cookies";
 
+// const initOptions = {
+//     url: 'http://127.0.0.1:8080/', realm: 'my-realm', clientId: 'my-client', onLoad: 'login-required'
+// }
 const initOptions = {
-    url: 'http://127.0.0.1:8080/', realm: 'my-realm', clientId: 'my-client', onLoad: 'login-required'
+    url: 'https://auth-craigmiller160.ddns.net/', realm: 'apps-dev', clientId: 'expense-tracker-ui', onLoad: 'login-required'
 }
 
 const keycloak = new Keycloak(initOptions);
